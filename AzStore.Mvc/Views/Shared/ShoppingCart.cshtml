@@ -1,0 +1,30 @@
+﻿@model AzStore.Mvc.Models.ShoppingCart.ShoppingCartViewModel
+
+<table class="shoppingcarttable" border="1">
+    <thead>
+        <tr>
+            <th>Cart items @Model.ProductCount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@Html.Partial("~/Views/Shared/Shopping.cshtml", item)</td>
+            </tr>
+        }
+        <tr>
+            <td class="shoppingcarttotal">Total: @Html.DisplayFor(model => model.Total)</td>
+        </tr>
+        <tr>
+            <td align="right">
+
+                @using (Html.BeginForm("Checkout", "ShoppingCart", FormMethod.Post))
+                {
+                    <input type="submit" value="Proceed to Checkout" disabled="@Model.DisableCheckout" class="btn btn-default" />
+                }
+
+            </td>
+        </tr>
+    </tbody>
+</table>

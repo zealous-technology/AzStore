@@ -1,0 +1,11 @@
+﻿@model AzStore.Mvc.Models.Search.SearchFilterViewModel
+
+@using (Html.BeginForm("Search", "Product", FormMethod.Get))
+{
+    <table>
+        <tr>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+            <td>&nbsp;<input type="submit" value="Search" class="btn btn-default" /></td>
+        </tr>
+    </table>
+}

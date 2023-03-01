@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - A to Z Company</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="~/Scripts/AzStore.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top productnavbar">
+        <div class="container">
+            <div class="navbar-header">
+                <table>
+                    <tr>
+                        <td>
+                            @Html.ActionLink("A to Z Company", "Search", "Product", null, new { @class = "navbar-brand" }) &nbsp;| &nbsp;
+                            @Html.ActionLink("Contact", "Contact", "Product", null, new { @class = "navbar-brand" }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td align="right">
+                            @RenderSection("search", required: false)
+                        </td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - A to Z Company Mvc Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
