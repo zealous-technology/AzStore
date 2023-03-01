@@ -1,0 +1,27 @@
+﻿@model AzStore.Mvc.Models.Product.ProductViewModel
+
+<table width="100%" border="0" cellpadding="5" class="producttable">
+    <tr>
+        <td>
+            <img src="@Url.Content(Model.ImageUrl)" width="80" height="80" alt="@Model.Name" title="@Model.Name" />
+        </td>
+        <td width="99%">            
+            <span class="productname">@Html.DisplayFor(modelItem => Model.Name)</span>
+             <br />
+
+            <span class="productdescription">
+                @Html.DisplayFor(modelItem => Model.Description)
+
+                <br />
+                @Html.DisplayFor(modelItem => Model.Category.Name)<br />
+                @Html.DisplayNameFor(model => model.Sku) : @Html.DisplayFor(modelItem => Model.Sku)
+                @Html.DisplayNameFor(model => model.Rating) : @Html.DisplayFor(modelItem => Model.Rating)
+            </span>
+            <br />
+            <a href="#" onclick="AddToCart('@Model.Id')">Add to Cart</a>
+        </td>
+        <td align="right">
+            @Html.DisplayFor(modelItem => Model.Price)
+        </td>
+    </tr>
+</table>

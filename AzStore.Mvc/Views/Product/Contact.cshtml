@@ -1,0 +1,23 @@
+﻿@model AzStore.Mvc.Models.Search.SearchFilterViewModel
+
+@{
+    ViewData["Title"] = "Stephen Ager";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<address>
+    56 Simcoe Close SW<br />
+    Calgary, AB T3H 4N$<br />
+    <abbr title="Phone">P:</abbr>
+    403.922.5598
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="mailto:steve_ager@yahoo.co.uk">steve_ager@yahoo.co.uk</a><br />
+</address>
+
+@section Search
+{
+    @Html.Partial("~/Views/Shared/SearchFilter.cshtml", Model)
+}

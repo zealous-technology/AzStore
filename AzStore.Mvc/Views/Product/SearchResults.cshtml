@@ -1,0 +1,17 @@
+﻿@model AzStore.Mvc.Models.Product.SearchResultsViewModel
+
+<table border="0" cellpadding="5" cellspacing="0" width="600">
+    <thead>
+        <tr>
+            <th>Products @Model.ProductCount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@Html.Partial("~/Views/Product/Product.cshtml", item)</td>
+            </tr>
+        }
+    </tbody>
+</table>

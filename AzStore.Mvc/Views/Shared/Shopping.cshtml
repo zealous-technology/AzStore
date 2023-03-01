@@ -1,0 +1,28 @@
+﻿@model AzStore.Mvc.Models.Product.ProductViewModel
+
+<table width="100%" border="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="align-content:right">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td width="99%">
+                @Html.DisplayFor(model => model.Name)<br /><span class="productdescription">@Html.DisplayFor(model => model.Description)</span>
+                <br />
+                <a href="#" onclick="RemoveFromCart('@Model.Id')">Remove from Cart</a>
+            </td>
+            <td align="right" valign="top">
+                @Html.DisplayFor(model => model.Price)
+            </td>
+        </tr>
+
+    </tbody>
+</table>

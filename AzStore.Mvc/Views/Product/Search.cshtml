@@ -1,0 +1,22 @@
+﻿@model AzStore.Mvc.Models.Product.SearchViewModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+
+@section Search
+{
+    @Html.Partial("~/Views/Shared/SearchFilter.cshtml", Model.SearchFilterViewModel)
+}
+
+<table cellpadding="5" border="0">
+    <tr valign="top">
+        <td>@Html.Partial("~/Views/Product/SearchResults.cshtml", Model.SearchResultsViewModel)</td>
+        <td>
+            <div id="divShoppingCart">
+                @Html.Partial("~/Views/Shared/ShoppingCart.cshtml", Model.ShoppingCartViewModel)
+            </div>        
+        </td>
+    </tr>
+</table>
